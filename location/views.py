@@ -2,7 +2,6 @@ from rest_framework import status
 from rest_framework.decorators import api_view, authentication_classes
 from rest_framework.response import Response
 
-from commdem_warriors_backend.authenticators import ApiKeyAuthentication
 from location.models import (
     CitiesModel,
     CountriesDialCodeModel,
@@ -15,11 +14,11 @@ from response import Response as ResponseData
 
 
 @api_view(["POST"])
-@authentication_classes(
-    [
-        ApiKeyAuthentication,
-    ]
-)
+# @authentication_classes(
+#     [
+#         ApiKeyAuthentication,
+#     ]
+# )
 def addCountryDialCodes(request):
     """Function to add new cities,states,countries"""
     try:
