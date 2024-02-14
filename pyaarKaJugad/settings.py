@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'pyaarKaJugad.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": os.getenv("DATABASE_ENGINE","django.db.backends.postgresql"),
-        "NAME": os.getenv("DATABASE_NAME","pyarkaJugadDatabase"),
+        "NAME": os.getenv("DATABASE_NAME","pyar_ka_jugad_database"),
         "USER": os.getenv("DATABASE_USER","postgres"),
         "PASSWORD": os.getenv("DATABASE_PASSWORD","123"),
         "HOST": os.getenv("DATABASE_HOST","localhost"),
