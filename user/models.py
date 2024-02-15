@@ -4,7 +4,11 @@ from django.db import models
 
 from location.models import CitiesModel,StatesModel,CountriesModel
 
+class File(models.Model):
+    file = models.FileField(blank=False)
+
 class UserModel(models.Model):
+    id = models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=100, default='', null=False)
     last_name = models.CharField(max_length=100, default='', null=False)
     phone_number = models.CharField(max_length=15, null=False)  # Assuming PhoneNumber is a custom validator
@@ -13,7 +17,7 @@ class UserModel(models.Model):
     country = models.ForeignKey(CountriesModel, on_delete=models.CASCADE, null=False)
     state = models.ForeignKey(StatesModel, on_delete=models.CASCADE, null=False)
     city = models.ForeignKey(CitiesModel, on_delete=models.CASCADE, null=False)
-    images = models.JSONField(default=list, null=False)
+    images = models.ManyToManyField(File)
     height = models.CharField(max_length=10, default='', null=False)
     weight = models.CharField(max_length=10, default='', null=False)
     instagram_id = models.CharField(max_length=100, default='', null=True)

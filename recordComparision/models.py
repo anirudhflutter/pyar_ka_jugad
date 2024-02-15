@@ -5,6 +5,7 @@ from answerOfQuestions.models import AnswersOfFemalesModel, AnswersOfMalesModel
 from user.models import UserModel
 
 class ComparingRecordsAnswerWiseModel(models.Model):
+    id = models.AutoField(primary_key=True)
     female_answer = models.ForeignKey(AnswersOfFemalesModel, on_delete=models.CASCADE)
     male_answer = models.ForeignKey(AnswersOfMalesModel, on_delete=models.CASCADE)
     total_points = models.IntegerField(default=0)  # Assuming default value is 0
@@ -14,6 +15,7 @@ class ComparingRecordsAnswerWiseModel(models.Model):
     updated_at = models.DateTimeField(default=timezone.now)
 
 class TotalRecordsComparisonModel(models.Model):
+    id = models.AutoField(primary_key=True)
     female_user = models.ForeignKey(UserModel, related_name='female_user', on_delete=models.CASCADE)
     male_user = models.ForeignKey(UserModel, related_name='male_user', on_delete=models.CASCADE)
     total_points = models.IntegerField(default=0)  # Assuming default value is 0

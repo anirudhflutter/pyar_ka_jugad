@@ -4,6 +4,7 @@ from django.utils import timezone
 from user.models import UserModel
 
 class MaleFemaleConnectionModel(models.Model):
+    id = models.AutoField(primary_key=True)
     from_user = models.ForeignKey(UserModel, related_name='from_user', on_delete=models.CASCADE)
     to_user = models.ForeignKey(UserModel, related_name='to_user', on_delete=models.CASCADE)
     is_blocked = models.BooleanField(default=False)

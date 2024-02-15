@@ -4,6 +4,7 @@ from django.utils import timezone
 from question.models import QuestionForFemaleModel, QuestionForMaleModel
 
 class QuestionOptionsForFemalesModel(models.Model):
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255)
     question = models.ForeignKey(QuestionForFemaleModel, on_delete=models.CASCADE)
     is_active = models.BooleanField(default=True)
@@ -12,6 +13,7 @@ class QuestionOptionsForFemalesModel(models.Model):
     updated_at = models.DateTimeField(default=timezone.now)
 
 class QuestionOptionsForMalesModel(models.Model):
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255)
     question = models.ForeignKey(QuestionForMaleModel, on_delete=models.CASCADE)
     is_active = models.BooleanField(default=True)
