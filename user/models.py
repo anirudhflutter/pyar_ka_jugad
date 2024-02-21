@@ -17,7 +17,7 @@ class UserModel(models.Model):
     country = models.ForeignKey(CountriesModel, on_delete=models.CASCADE, null=False)
     state = models.ForeignKey(StatesModel, on_delete=models.CASCADE, null=False)
     city = models.ForeignKey(CitiesModel, on_delete=models.CASCADE, null=False)
-    images = models.ManyToManyField(File)
+    images = models.CharField(max_length=200, default='', null=False)
     height = models.CharField(max_length=10, default='', null=False)
     weight = models.CharField(max_length=10, default='', null=False)
     instagram_id = models.CharField(max_length=100, default='', null=True)

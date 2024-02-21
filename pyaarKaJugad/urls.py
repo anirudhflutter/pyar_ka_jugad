@@ -20,4 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('location_app/', include("location.urls")),
     path('user_app/', include("user.urls")),
+    path('question_app/', include("question.urls")),
+    path('question_option_app/', include("questionOption.urls")),
+    path('answers_of_questions_app/', include("answerOfQuestions.urls")),
 ]
