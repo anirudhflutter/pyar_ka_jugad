@@ -44,8 +44,8 @@ INSTALLED_APPS = [
     'connectionsOfPartners',
     'question',
     'questionOption',
-    'recordComparision'
-
+    'recordComparision',
+    'occupation'
 ]
 
 MIDDLEWARE = [

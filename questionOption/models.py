@@ -8,15 +8,21 @@ class QuestionOptionsForFemalesModel(models.Model):
     title = models.CharField(max_length=255)
     question = models.ForeignKey(QuestionForFemaleModel, on_delete=models.CASCADE)
     is_active = models.BooleanField(default=True)
-    is_deleted = models.BooleanField(default=True)
+    is_deleted = models.BooleanField(default=False)
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(default=timezone.now)
 
+    def __str__(self):
+        return f"{self.title}"
+    
 class QuestionOptionsForMalesModel(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255)
     question = models.ForeignKey(QuestionForMaleModel, on_delete=models.CASCADE)
     is_active = models.BooleanField(default=True)
-    is_deleted = models.BooleanField(default=True)
+    is_deleted = models.BooleanField(default=False)
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f"{self.title}"
